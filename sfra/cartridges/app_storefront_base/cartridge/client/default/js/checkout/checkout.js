@@ -425,7 +425,7 @@ var scrollAnimate = require('../components/scrollAnimate');
                 // Handle Payment option selection
                 //
                 $('input[name$="paymentMethod"]', plugin).on('change', function () {
-                    $('.credit-card-form').toggle($(this).val() === 'CREDIT_CARD');
+                    $('.credit-card-form').toggle($(this).val() === 'RAZOR_PAY');
                 });
 
                 //

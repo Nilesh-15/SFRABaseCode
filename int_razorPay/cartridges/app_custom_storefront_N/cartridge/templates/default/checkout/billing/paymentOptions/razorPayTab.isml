@@ -1,0 +1,10 @@
+<li class="nav-item" data-method-id="${paymentOption.ID}">
+    <a class="nav-link razor-pay-tab" data-toggle="tab" href="#razor-pay-content" role="tab">
+        <img class="razorpay-option"
+                src="${URLUtils.staticURL('/images/razorpay.png')}"
+                height="32"
+                alt="${paymentOption.name}"
+                title="${paymentOption.name}"
+        >
+    </a>
+</li>

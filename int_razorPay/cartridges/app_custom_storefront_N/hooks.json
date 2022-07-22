@@ -1,0 +1,16 @@
+{
+    "hooks" : [
+        {
+            "name":"app.payment.form.processor.razor_pay",
+            "script":"./cartridge/scripts/hooks/payment/processor/razor_pay"
+        },
+        {
+            "name":"app.payment.processor.razor_pay",
+            "script":"./cartridge/scripts/hooks/payment/processor/razor_pay"
+        },
+        {
+            "name":"app.payment.processor.razor_pay",
+            "script":"./cartridge/scripts/hooks/payment/processor/razor_pay"
+        }
+    ]
+}

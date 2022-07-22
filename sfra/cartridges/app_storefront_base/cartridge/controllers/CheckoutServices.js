@@ -306,6 +306,7 @@ server.post(
         var paymentProcessor = PaymentManager.getPaymentMethod(paymentMethodIdValue).getPaymentProcessor();
 
         var paymentFormResult;
+        dw.system.Logger.warn("Hook Name : "+'app.payment.form.processor.' + paymentProcessor.ID.toLowerCase());
         if (HookManager.hasHook('app.payment.form.processor.' + paymentProcessor.ID.toLowerCase())) {
             paymentFormResult = HookManager.callHook('app.payment.form.processor.' + paymentProcessor.ID.toLowerCase(),
                 'processForm',

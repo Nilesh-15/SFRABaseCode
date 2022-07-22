@@ -131,5 +131,5 @@
         </div>
     </div>
     <isinclude template="checkout/shipping/shippingAddressTemplate" />
-
+    <iscomment> <isinclude template="checkout/handleRazorPay" /> </iscomment>
 </isdecorate>

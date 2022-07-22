@@ -1,0 +1,28 @@
+<div class="tab-pane razor-pay-content" id="razor-pay-content" role="tabpanel">
+    <fieldset class="payment-form-fields">
+
+        <!--- payment method is credit card --->
+        <input type="hidden" class="form-control"
+               name="${pdict.forms.billingForm.paymentMethod.htmlName}"
+               value="RAZOR_PAY"
+        >
+        <iscomment> ${pdict.order.totals.grandTotal}
+        ${pdict.order.shipping[0].shippingAddress.firstName} </iscomment>
+        <isset name="customerFullName" value="${pdict.order.shipping[0].shippingAddress.firstName +' '+pdict.order.shipping[0].shippingAddress.lastName}" scope="page"/>
+        <isset name="customerFullAddress" value="${pdict.order.shipping[0].shippingAddress.address1 +' '+pdict.order.shipping[0].shippingAddress && pdict.order.shipping[0].shippingAddress.address2 ? pdict.order.shipping[0].shippingAddress.address2 : ''+' '+pdict.order.shipping[0].shippingAddress.city+' '+pdict.order.shipping[0].shippingAddress.stateCode+' '+pdict.order.shipping[0].shippingAddress.postalCode}" scope="page"/>
+        <button id="rzp-button1" type="button" 
+            data-amount="${pdict.order.totals.grandTotal}" 
+            data-custname="${customerFullName}" 
+            data-email="${(pdict.customer.profile && pdict.customer.profile.email) ? pdict.customer.profile.email : pdict.order.orderEmail}" 
+            data-contactnum="${pdict.order.shipping[0] && pdict.order.shipping[0].shippingAddress.phone ? pdict.order.shipping[0].shippingAddress.phone : ''}" 
+            data-address="${customerFullAddress}" 
+            url="RazorPay-PayPayment">
+            <img class="razorpay-option"
+                src="${URLUtils.staticURL('/images/razorpay.png')}"
+                height="32"
+                alt="${paymentOption.name}"
+                title="${paymentOption.name}"
+            />
+        </button>
+    </fieldset>
+</div>
